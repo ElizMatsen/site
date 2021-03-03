@@ -1,0 +1,85 @@
+<div class="pricing-container">
+  <div class="container">
+    <h1>Prices</h1>
+    <div class="pricing-card-container row-content">
+
+      <div class="pricing-card-item">
+        <div class="pricing-card-price">
+          100$
+        </div>
+        <div class="pricing-card-price-bg-first">
+        </div>
+        <div class="pricing-card-price-bg">
+        </div>
+
+        <div class="pricing-card-title">
+          HAPPY HOURS
+        </div>
+
+        <div class="pricing-card-description">
+          <div class="pricing-card-description-item">
+            Weekdays from 9am to 6pm
+          </div>
+          <div class="button pricing-card-button"  (click)="closePopup()"> BUY NOW</div>
+        </div>
+
+      </div>
+
+      <div class="pricing-card-item">
+        <div class="pricing-card-price">
+          150$
+        </div>
+        <div class="pricing-card-price-bg-first">
+        </div>
+        <div class="pricing-card-price-bg">
+        </div>
+        <div class="pricing-card-title">
+          DYNAMIC EVENING
+        </div>
+
+        <div class="pricing-card-description">
+          <div class="pricing-card-description-item">
+            Weekdays from 6am to 9pm
+          </div>
+          <div class="button pricing-card-button"  (click)="closePopup()">BUY NOW</div>
+        </div>
+
+      </div>
+
+      <div class="pricing-card-item">
+        <div class="pricing-card-price">
+          200$
+        </div>
+        <div class="pricing-card-price-bg-first">
+        </div>
+        <div class="pricing-card-price-bg">
+        </div>
+        <div class="pricing-card-title">
+          CHEAP WEEKEND
+        </div>
+        <div class="pricing-card-description">
+          <div class="pricing-card-description-item">
+            Weekend from 9 am to 8 pm
+          </div>
+          <div class="button pricing-card-button" (click)="closePopup()">BUY NOW</div>
+        </div>
+      </div>
+    </div>
+
+    <div [ngClass]="{'popup-open':!popup}" *ngIf="!popup">
+      <div class="popup-open-description" *ngIf="popupThank">
+        <div class="popup-title">Leave your phone number and we will contact you within 15 minutes</div>
+        <input type="text" placeholder="Name">
+        <input class="form-control" type="tel" placeholder="+375" />
+        <div class="button" (click)="closePopupThank()">Sent</div>
+        <div class="close" (click)=" popup = !popup "></div>
+      </div>
+      <div class="popup-thank" *ngIf="!popupThank">
+        <div class="popup-thank-title"> Thank you!
+          <div class="popup-thank-title"> Wait for a call within 15 minutes</div>
+        </div>
+        <div class="button" (click)=" popup = !popup">OK</div>
+      </div>
+    </div>
+  </div>
+</div>

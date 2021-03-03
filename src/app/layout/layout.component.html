@@ -1,0 +1,103 @@
+<div class="layout-wrapper">
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo" [routerLink]="['']">
+          <img src="../../assets/img/logo.svg" alt="">
+        </div>
+        <div class="open-menu" (click)="openMenu = !openMenu" [ngClass]="{'closeMenu':openMenu,'openMenu': !openMenu }">
+          <span></span>
+        </div>
+        <div [ngClass]="{'open-menu-bg':openMenu,'open-menu-bg-hidden':!openMenu}"></div>
+        <nav [ngClass]="{'header-navigation':!openMenu,'header-navigation-hidden':openMenu }">
+          <li class="header-navigation-link" [routerLink]="['services']" (click)="routerLinkActive()">
+            <div>SERVICES
+            </div>
+          </li>
+          <li class="header-navigation-link" [routerLink]="['pricing']" (click)="routerLinkActive()">
+            <div>PRICING</div>
+          </li>
+          <li class="header-navigation-link" [routerLink]="['contacts']" (click)="routerLinkActive()">
+            <div>CONTACTS</div>
+          </li>
+          <li class="header-navigation-link   ">
+            <a class="header-navigation-number" href="tel:+0(12)-34-45-56">+0(12)-34-45-56</a>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <router-outlet></router-outlet>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row row-content">
+
+        <div class="footer-item footer-description">
+          <div class="  footer-main-text">
+            Where dreams come true
+          </div>
+          <div class="footer-logo">
+            <img src="../../assets/img/logo.svg" alt="">
+          </div>
+        </div>
+
+        <div class="footer-item footer-subscribe">
+          <div class="footer-title">Newsletter</div>
+          <div class="footer-subscribe-description">Submit to our newsletter & subscribe to
+            our newsletter to be on the up and up
+          </div>
+          <input class="footer-subscribe-input form-control" name="email" placeholder="eliod@mail.com"
+                 [(ngModel)]="user.email" #email="ngModel" email/>
+          <div *ngIf="email.value === '' && email.touched" class="alert alert-danger">
+            Enter your email
+          </div>
+          <div *ngIf="email.invalid && !email.untouched" class="alert alert-danger">
+            Enter your correct email
+          </div>
+          <button class="footer-subscribe-button" >Subscribe
+            <div class="subscribe-button-arrow"><span class="subscribe-button-arrow-top"></span>
+              <span class="subscribe-button-arrow-bottom"></span></div>
+          </button>
+        </div>
+
+        <div class="footer-item footer-info-body">
+          <div class="footer-title">New York</div>
+          <div class="footer-info-container">
+            <div class="footer-info-item">
+              <div class="footer-info-address">
+                <div class="footer-info-items">105 Lincoln Avenue</div>
+                <div class="footer-info-items"> Bronx, NY 10454, USA</div>
+              </div>
+            </div>
+            <div class="footer-info-item">
+              <a class="footer-info-items" href="tel:+0(12)-34-45-56">+0(12)-34-45-56</a>
+              <a class="footer-info-items" href="tel:+0(12)-34-45-56">+0(12)-34-45-56</a>
+            </div>
+            <div class="footer-info-item">
+              <a class="footer-info-items" href="mailto:webon1@webonexample.com">@webonexample.com</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="waveWrapper waveAnimation">
+      <div class="waveWrapperInner bgTop">
+        <div class="wave waveTop"></div>
+      </div>
+      <div class="waveWrapperInner bgMiddle">
+        <div class="wave waveMiddle"></div>
+      </div>
+      <div class="waveWrapperInner bgBottom">
+        <div class="wave waveBottom"></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="main-banner">
+  <div class="container">
+    <img src="../assets/img/main-img.png" alt="img">
+    <div class="main-banner-row">
+      <h1 class="main-banner-title">Best quests in virtual reality</h1>
+      <div class="main-banner-text">Welcome to the future!</div>
+      <div class="button main-banner-button" (click)="closePopup()">Request a call</div>
+
+      <div [ngClass]="{'popup-open':!popup}" *ngIf="!popup">
+        <div class="popup-open-description" *ngIf="popupThank">
+          <div class="popup-title">Leave your phone number and we will contact you within 15 minutes</div>
+          <input type="text" placeholder="Name">
+          <input type="tel" placeholder="+375">
+          <div class="button" (click)="closePopupThank()">Sent</div>
+          <div class="close" (click)=" popup = !popup "></div>
+        </div>
+        <div class="popup-thank" *ngIf="!popupThank">
+          <div class="popup-thank-title"> Thank you!
+            <div class="popup-thank-title"> Wait for a call within 15 minutes</div>
+          </div>
+          <div class="button" (click)=" popup = !popup">OK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
